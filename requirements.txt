@@ -3,3 +3,6 @@ numpy
 matplotlib
 tensorflow
 scikit-learn
+requests
+jupyter
+pillow
