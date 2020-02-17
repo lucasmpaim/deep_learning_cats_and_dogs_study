@@ -130,3 +130,23 @@ dmypy.json
 .idea/
 
 data/
+
+latex/**.aux
+latex/**.bit
+latex/**.blg
+latex/**.bbl
+latex/**.lof
+latex/**.log
+latex/**.lot
+latex/**.glo
+latex/**.glx
+latex/**.gxg
+latex/**.gxs
+latex/**.idx
+latex/**.ilg
+latex/**.ind
+latex/**.out
+latex/**.url
+latex/**.svn
+latex/**.toc
+latex/**.gz

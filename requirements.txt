@@ -6,3 +6,6 @@ scikit-learn
 requests
 jupyter
 pillow
+opencv-python
+tqdm
+seaborn
