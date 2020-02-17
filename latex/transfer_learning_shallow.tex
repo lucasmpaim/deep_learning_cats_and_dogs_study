@@ -1,0 +1,30 @@
+\subsection{Transfer Learning Shallow}
+
+O modelo pré-treinado utilizado por este trabalho é a Xception que é uma rede treinada utilizando a base \citeonline{imagenet}, que é uma base de com milhares de imagens utilizada e alimentada pela comunidade cientifica.
+
+Foram extraídos as características em arquivos CSV, esta extração resultou em 2048 características para cada uma das imagens, o dataframe de treinamento obteve o seguinte shape:
+
+\begin{verbatim}
+	(2000, 2048)
+\end{verbatim}
+
+Utilizando a técnica t-SNE, que segundo \citeonline{t-SNE}, é uma técnica de redução de dimensionalidade estocástica, ou seja, utilizando está técnica é possível reduzir um vetor de tamanho \(N\) para um de tamanho \(X\), onde \(X < N\), foi realizada a redução das bases de características e apresentadas gráficamente, para assim analisar o quão bem distribuídos estão as classes, estes gráficos podem ser conferinos na \autoref{tsne-train-transfer-shallow} e \autoref{tsne-val-transfer-shallow}
+
+É possível notar estas características conseguem separar quase que perfeitamente as duas classes (gatos e cães), já na visão reduzida que temos na plotagem do t-SNE, com isso não é necessário um modelo muito robusto para que se obtenha resultados satisfatórios. 
+
+O modelo shallow escolhido para este trabalho é o Naive Bayes.
+
+Segundo, \citeonline{naive-bayes-britto}, o teorema de Bayes consiste em uma abordagem probabilística para aprendizagem, calculando assim a probabilidade de uma característica \(X\) de um vetor de prever determinada classe.
+
+A técnica de Naive Bayes, assume que todas as caractéristicas no vetor são independentes, por isso, é chamado de Naive (do inglês Ingênuo), pois determinadas caracterísicas podem estar relacionadas entre si, o que faz com que essa técnica tenha um resultado inferior a ténica de Redes Bayesianas que consideram que os atributos podem ou não ser relacionados, isto é, a característica \(X\) pode ou não estar diretamente relacionada a característica \(Y\).
+
+\subsubsection{Resultados do Treinamento}
+
+Como esperado, o resultado foi extremamente satisfatório, conseguindo até 97,6\% de acurácia.
+
+
+\begin{verbatim}
+	Acurácia Naive Bayes Validação: 0.976
+\end{verbatim}
+
+A matrix de confusão pode ser consultada na: \autoref{cm-naive-bayes}.

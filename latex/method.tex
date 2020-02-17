@@ -1,0 +1,19 @@
+% ----------------------------------------------------------
+% Seção de explicações
+% ----------------------------------------------------------
+\section{Método}
+
+O dataset utilizado por este trabalho, foi a "cats vs dogs" disponibilizada pelo Google em sua página da tensorflow, esta base contém 3 mil imagens de gatos e cachorros e seu propósito é ensinar a computadores a classificar fotos destes dois animais.
+A base está dividida em treinamento e validação, onde respectivamente temos, 2 mil imagens para treinamento e mil imagens para validação, ou seja, aproximadamente 30\% da base voltada para validação.
+
+As técnicas utilizadas para este trabalho são:
+
+ \begin{description}
+	\item[Transfer-learning baseada em extrator de caracterísicas] é utilizada uma rede previamente treinada como extrator de caracterísicas, e estas são utilizadas para treinar modelos razos, como: SVM, KNN, etc.
+	\item[Transfer-learning baseado em fine-tuning] é utilizada uma rede previamente treinada, em que as camadas convolucionais do modelo são congeladas, e as camadas densas são retreinadas para o novo problema.
+	\item[From scratch] Criar e treinar um modelo a partir de um novo projeto, ou seja, sem reuilizar redes previamente treinadas.
+\end{description}
+
+
+\input{transfer_learning_shallow.tex}
+\input{transfer_learning_fine_tunning.tex}
