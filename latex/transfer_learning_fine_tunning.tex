@@ -1,4 +1,35 @@
 \subsection{Transfer Learning - Fine Tunning}
 
+Para o fine tuning deste trabalho, também foi utilizado a rede Xception, para uma melhor comparação em relação ao modelo shallow.
+
+Para esta técnica além da rede xception que teve sua parte convolucional congelada, foi adicionada novas camadas para fosse realizado ajuste para o problema proposto, o sumário da rede proposta foi:
+
+\begin{verbatim}
+	Model: "sequential"
+	_________________________________________________________________
+	Layer (type)                 Output Shape              Param #   
+	=================================================================
+	xception (Model)             (None, 2048)              20861480  
+	_________________________________________________________________
+	flatten (Flatten)            (None, 2048)              0         
+	_________________________________________________________________
+	dense (Dense)                (None, 1024)              2098176   
+	_________________________________________________________________
+	dropout (Dropout)            (None, 1024)              0         
+	_________________________________________________________________
+	dense_1 (Dense)              (None, 2)                 2050      
+	=================================================================
+	Total params: 22,961,706
+	Trainable params: 2,100,226
+	Non-trainable params: 20,861,480
+	_________________________________________________________________
+\end{verbatim}
 
 \subsubsection{Resultados do Treinamento}
+
+Sua acurácia foi extremamente satisfatória tanto na base de validação quanto na base de teste, o que pode ser um indicador que a rede não terá um bom desempenho no processo de generalização:
+\begin{verbatim}
+loss: 0.0115 - accuracy: 0.9956 - val_loss: 0.0311 - val_accuracy: 0.9950
+\end{verbatim}
+
+A matriz de confusão pode ser visualizada em: \autoref{cm-fine-tunning}

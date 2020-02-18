@@ -1,0 +1,48 @@
+\subsection{Model from Scratch}
+
+O modelo criado do zero, foi montado baseado no modelo proposto pelo \citeonline{tensorflow-cats-vs-dogs} e em algumas configurações da Xception, sua arquitetura proposta foi:
+
+
+\begin{verbatim}
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+conv2d_3 (Conv2D)            (None, 299, 299, 16)      448       
+_________________________________________________________________
+max_pooling2d_3 (MaxPooling2 (None, 149, 149, 16)      0         
+_________________________________________________________________
+conv2d_4 (Conv2D)            (None, 149, 149, 32)      4640      
+_________________________________________________________________
+max_pooling2d_4 (MaxPooling2 (None, 74, 74, 32)        0         
+_________________________________________________________________
+conv2d_5 (Conv2D)            (None, 74, 74, 64)        18496     
+_________________________________________________________________
+max_pooling2d_5 (MaxPooling2 (None, 37, 37, 64)        0         
+_________________________________________________________________
+flatten_1 (Flatten)          (None, 87616)             0         
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 87616)             0         
+_________________________________________________________________
+dense_2 (Dense)              (None, 512)               44859904  
+_________________________________________________________________
+dense_3 (Dense)              (None, 1)                 513       
+=================================================================
+Total params: 44,884,001
+Trainable params: 44,884,001
+Non-trainable params: 0
+_________________________________________________________________
+\end{verbatim}
+
+\subsubsection{Resultados do Treinamento}
+
+O resultado preliminar foi de 85,1\% de acurácia na base de teste e 68.8\% na base de validação.
+
+
+\begin{verbatim}
+loss: 0.3271 - accuracy: 0.8510 - val_loss: 0.6158 - val_accuracy: 0.6886
+\end{verbatim}
+
+
+É um resultado decepcionante considerando que um modelo shallow consiguiu 97\% de acurácia, porém, não foram aplicados meios de se melhorar esta rede para esta quantidade de imagens, que seria aplicar técnicas de aumento de dados, ou seja, aplicar transformações na imagem para que cada imagem gere N outras imagens, o que ajuda no treinamento da rede.
+
+A matrix de confusão pode ser consultada na: \autoref{cm-from-scratch}, 
